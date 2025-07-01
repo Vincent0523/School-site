@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Login</title>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .login-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .login-box img {
+    display: block;
+    margin: 0 auto 20px auto;
+    max-width: 100px;
+  }
+
+  h2 {
+    text-align: center;
+    color: #004080;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #003060;
+  }
+
+  .error {
+    color: red;
+    font-size: 0.9em;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="login-box">
+    <img src="logo.png" alt="Drosec logo">
+    <h2>Student Portal Login</h2>
+    <form onsubmit="return login()">
+      <input type="text" id="refNumber" placeholder="Reference Number" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <p id="error" class="error"></p>
+    </form>
+  </div>
+
+  <script>
+    function login() {
+      const ref = document.getElementById("refNumber").value;
+      const pass = document.getElementById("password").value;
+
+      // Example: Replace with real authentication or localStorage
+      const dummyRef = "123456";
+      const dummyPass = "password";
+
+      if (ref === dummyRef && pass === dummyPass) {
+        window.location.href = "student-portal.html"; // Redirect to portal
+        return false;
+      } else {
+        document.getElementById("error").textContent = "Invalid reference number or password.";
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
