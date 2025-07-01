@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Portal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f9;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5em;
+    }
+
+    .logout {
+      background: red;
+      color: white;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+      color: #004080;
+      margin-bottom: 10px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .profile img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+
+    .card ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .card ul li {
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .card ul li:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.2em;
+      }
+
+      .profile img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Your Student Portal</h1>
+    <button class="logout" onclick="logout()">Logout</button>
+  </header>
+
+  <main class="grid">
+
+    <!-- Profile Card -->
+    <div class="card">
+      <h2>Your Profile</h2>
+      <div class="profile">
+        <img src="https://via.placeholder.com/70" alt="Student Photo" />
+        <div>
+          <strong>Name:</strong> John Doe<br>
+          <strong>Ref No:</strong> 123456<br>
+          <strong>Class:</strong> SS3
+        </div>
+      </div>
+    </div>
+
+    <!-- Timetable -->
+    <div class="card">
+      <h2>Today's Timetable</h2>
+      <ul>
+        <li>08:00 – 09:00: Mathematics</li>
+        <li>09:00 – 10:00: English</li>
+        <li>10:30 – 11:30: Chemistry</li>
+        <li>12:00 – 01:00: ICT</li>
+      </ul>
+    </div>
+
+    <!-- Assignments -->
+    <div class="card">
+      <h2>Recent Assignments</h2>
+      <ul>
+        <li>Math Worksheet - Due: June 5</li>
+        <li>English Essay - Due: June 6</li>
+        <li>Biology Report - Due: June 7</li>
+      </ul>
+    </div>
+
+    <!-- Results -->
+    <div class="card">
+      <h2>Latest Results</h2>
+      <ul>
+        <li>Mathematics: 85%</li>
+        <li>English: 90%</li>
+        <li>Biology: 88%</li>
+      </ul>
+    </div>
+
+    <!-- Resources -->
+    <div class="card">
+      <h2>Downloads</h2>
+      <ul>
+        <li><a href="#">Academic Calendar (PDF)</a></li>
+        <li><a href="#">Exam Timetable</a></li>
+        <li><a href="#">Assignment Template</a></li>
+      </ul>
+    </div>
+
+  </main>
+
+  <script>
+    function logout() {
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
